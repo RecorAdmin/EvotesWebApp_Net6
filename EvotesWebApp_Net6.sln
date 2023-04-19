@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33530.505
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EvotesWebApp", "EvotesWebApp\EvotesWebApp.csproj", "{FBFA2861-62BF-485F-90BE-F6EEB2559A99}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FBFA2861-62BF-485F-90BE-F6EEB2559A99}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FBFA2861-62BF-485F-90BE-F6EEB2559A99}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FBFA2861-62BF-485F-90BE-F6EEB2559A99}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FBFA2861-62BF-485F-90BE-F6EEB2559A99}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BE7666A2-7409-4BE2-97CE-7B11F8F15827}
+	EndGlobalSection
+EndGlobal
