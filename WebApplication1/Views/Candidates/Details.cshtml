@@ -1,0 +1,37 @@
+﻿@model CandidateVM
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details of @Model.firstName @Model.lastName</h1>
+
+<div>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.firstName)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.firstName)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.lastName)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.lastName)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Constituency)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Constituency)
+        </dd>
+    </dl>
+</div>
+<div>
+
+    @*<a asp-action="Edit" class="btn btn-warning" asp-route-id="@Model?.Id">Edit</a> |*@
+    <a  asp-action="Index" class="btn btn-dark">Back to List</a>
+    <a class="btn btn-warning" name="voteBtn" asp-controller="" asp-action="">Vote</a>
+</div>

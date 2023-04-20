@@ -1,0 +1,71 @@
+﻿@model IEnumerable<CandidateVM>
+
+@{
+    ViewData["Title"] = "Elected Candidates";
+}
+
+<h1>Elected Candidates</h1>
+
+@*<p>
+    <a asp-action="Create">Create New</a>
+</p>*@
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.firstName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.lastName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Constituency)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.firstName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.lastName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Constituency)
+            </td>
+            <td>
+                @*<a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |*@
+                    <a class="btn btn-warning" asp-action="Details" asp-route-id="@item.Id">Details</a> |
+               @* <a asp-action="Delete"  asp-route-id="@item.Id">Delete</a>*@
+               @* <button data-id="@item.Id" class="btn btn-danger deleteBtn" type="button">Delete</button>*@
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+@*<form id="deleteForm" asp-action="Delete">
+    <input type="hidden" id="candidateId" name="Id"/>
+</form>
+
+@section Scripts{
+    <script>
+        $(function(){
+            $('.deleteBtn').click(function(e){
+                swal({
+                    title: "Are you sure?",
+                    text: "Are you sure you want to delete this record?",
+                    icon: "warning",
+                    button: true,
+                    dangerMode: true
+                }).then((confirm)=>{
+                    if(confirm){
+                        alert('you said yes');
+                    }
+                });
+            });
+        });
+    </script>
+}*@
