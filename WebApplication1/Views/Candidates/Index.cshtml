@@ -6,9 +6,9 @@
 
 <h1>Elected Candidates</h1>
 
-@*<p>
-    <a asp-action="Create">Create New</a>
-</p>*@
+<p>
+    <a class="btn btn-success" asp-action="Create"><i class="fas fa-plus"></i> Create</a>
+</p>
 <table class="table">
     <thead>
         <tr>
@@ -37,22 +37,28 @@
                 @Html.DisplayFor(modelItem => item.Constituency)
             </td>
             <td>
-                @*<a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |*@
-                    <a class="btn btn-warning" asp-action="Details" asp-route-id="@item.Id">Details</a> |
-               @* <a asp-action="Delete"  asp-route-id="@item.Id">Delete</a>*@
-               @* <button data-id="@item.Id" class="btn btn-danger deleteBtn" type="button">Delete</button>*@
+                    <a class="btn btn-warning" asp-action="Edit" asp-route-id="@item.Id"><i class="fas fa-pencil-alt "></i> </a> |
+                    <a class="btn btn-info" asp-action="Details" asp-route-id="@item.Id"><i class="fas fa-info-circle"></i></a> |
+
+                    @*Original Delete Button*@
+                    @*<a asp-action="Delete"  asp-route-id="@item.Id">Delete</a>*@
+
+                    <button data-id="@item.Id" class="btn btn-danger deleteBtn" type="button"><i class="far fa-trash-alt"></i></button>
             </td>
         </tr>
 }
     </tbody>
 </table>
-@*<form id="deleteForm" asp-action="Delete">
+<form id="deleteForm" asp-action="Delete">
     <input type="hidden" id="candidateId" name="Id"/>
 </form>
 
 @section Scripts{
     <script>
         $(function(){
+
+            $('.table').DataTable();
+
             $('.deleteBtn').click(function(e){
                 swal({
                     title: "Are you sure?",
@@ -60,12 +66,15 @@
                     icon: "warning",
                     button: true,
                     dangerMode: true
-                }).then((confirm)=>{
-                    if(confirm){
-                        alert('you said yes');
-                    }
+                }).then((confirm) => {
+                        if(confirm){
+                            var btn =$(this);
+                            var id = btn.data("id");
+                            $('#candidateId').val(id);
+                            $('#deleteForm').submit();
+                         }
                 });
             });
         });
     </script>
-}*@
+}
