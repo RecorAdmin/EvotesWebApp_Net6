@@ -2,12 +2,12 @@
 
 namespace WebApplication1.Data
 {
-    public class Voters:BaseEntity
+    public class VoteAllocations : BaseEntity
     {
-        public int TRN { get; set; }
 
         [ForeignKey("CandidateId")]
         public Candidates Candidates { get; set; }
         public int CandidatesId { get; set; }
+        public int voteCount { get; set; }
     }
 }

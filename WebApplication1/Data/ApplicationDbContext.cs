@@ -12,5 +12,6 @@ namespace WebApplication1.Data
 
         public DbSet<Candidates> Candidates { get; set; }
         public DbSet<Voters> Voters { get; set; }
+        public DbSet<VoteAllocations> VoteAllocations { get; set;}
     }
 }
